@@ -1,0 +1,51 @@
+.checkbox-container {
+  height: 50px;
+  @include flexbox;
+  @include align-items(center);
+
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+    background-color: $default;
+    border: solid 1px #cccccc;
+    margin-left: ($spacing-m / 2);
+    border-radius: 2px;
+    font-family: $font-base;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &__img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      display: none;
+    }
+
+    @include breakpoint(sm) {
+      margin-left: 0;
+    }
+  }
+
+  &__p {
+    padding-left: $spacing-m / 2;
+  }
+
+  .checked {
+    background-color: $primary;
+    border: 1px color $primary;
+
+    .checkbox-container__checkbox__img {
+      display: block;
+    }
+  }
+
+  @include breakpoint(sm) {
+    height: auto;
+    margin-bottom: $spacing;
+    @include align-items(flex-start);
+  }
+}

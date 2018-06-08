@@ -1,0 +1,14 @@
+<section class="content-section container">
+  <div class="row">
+    <div id="films" class="films"></div>
+  </div>
+</section>
+
+<script type="text/handlebars-template" id="films-template">
+    {{#each this}}
+      <div class="films__film col-1-6">
+        <img class="films__film__poster" alt="poster" src="{{poster.url}}">
+        <p class="films__film__title">{{title}}</p>
+      </div>
+    {{/each}}
+  </script>

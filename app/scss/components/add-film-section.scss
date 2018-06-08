@@ -1,0 +1,21 @@
+//## Grid
+@import "../_variables";
+@import "../_mixins";
+
+.add-film-section {
+  margin-top: $spacing;
+  padding-bottom: $spacing;
+  background-color: #f8f8f8;
+
+  .checkbox-container {
+    margin-top: $spacing;
+
+    @include breakpoint(sm) {
+      margin-top: 0;
+    }
+  }
+
+  @include breakpoint(sm) {
+    margin: $spacing-m 0;
+  }
+}

@@ -1,0 +1,44 @@
+//## Grid
+@import "../_variables";
+@import "../_mixins";
+
+.content-section {
+  margin: ($spacing * 2) 0 ($spacing * 2);
+  height: auto;
+
+  .films {
+    @include flexbox;
+    @include flex-wrap(wrap);
+
+    &__film {
+      margin-bottom: $spacing;
+      transition: all 0.2s ease-in-out;
+      @include flexbox;
+      @include flex-direction(column);
+
+      &__poster {
+        padding: 0 1px;
+      }
+
+      &__title {
+        margin-top: $spacing-m;
+        text-align: center;
+        font-size: ($font-size-base + 2);
+        font-weight: 700;
+
+        .span-italic {
+          font-weight: 400;
+          color: $gray;
+        }
+      }
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  @include breakpoint(sm) {
+    margin: $spacing-m;
+  }
+}

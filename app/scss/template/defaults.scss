@@ -1,0 +1,18 @@
+//## Defaults
+@import "_variables";
+@import "_mixins";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $default;
+  font-family: $font-base;
+  color: $black;
+  line-height: 1.4;
+}
+
+#app {
+  max-width: 1024px;
+  margin: 0 auto;
+}

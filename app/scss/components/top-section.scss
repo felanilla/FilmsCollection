@@ -1,0 +1,85 @@
+//## Grid
+@import "../_variables";
+@import "../_mixins";
+
+.top-section {
+  margin-top: $spacing;
+
+  .sort-container {
+    &--shadow {
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+    }
+    .sort {
+      height: 50px;
+      position: relative;
+
+      &__title {
+        @include flexbox;
+        @include align-items(center);
+      }
+
+      &__dropdown {
+        display: none;
+        width: 100%;
+        padding: $spacing-m 0;
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        border-top: none;
+        z-index: 5;
+        overflow: hidden;
+        transition: all 0.5s;
+
+        &--active {
+          display: block;
+
+          @include breakpoint(sm) {
+            margin-top: -20px;
+          }
+        }
+
+        p {
+          margin-bottom: 10px;
+          display: inline-block;
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+
+        p.sort-type {
+          cursor: pointer;
+
+          &:hover {
+            font-weight: 700;
+          }
+        }
+
+        p.text-italic {
+          padding-left: 3px;
+        }
+
+        @include breakpoint(sm) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .search-container {
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: $spacing-m;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  @include breakpoint(sm) {
+    margin-top: $spacing-m;
+    height: auto;
+  }
+}

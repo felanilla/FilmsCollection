@@ -1,0 +1,39 @@
+input[type="text"],
+input[type="search"],
+.sort {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border: 1px solid #e8e8e8;
+  padding: 0 $spacing-m;
+  font-size: $font-size-base;
+  cursor: pointer;
+  @include flexbox;
+  @include align-items(center);
+
+  img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: $spacing-m;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  @include breakpoint(sm) {
+    margin-bottom: 20px;
+  }
+}
+
+*::-webkit-input-placeholder {
+  font-size: $font-size-base;
+}
+*:-moz-placeholder {
+  font-size: $font-size-base;
+}
+*::-moz-placeholder {
+  font-size: $font-size-base;
+}
+*:-ms-input-placeholder {
+  font-size: $font-size-base;
+}

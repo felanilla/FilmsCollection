@@ -1,0 +1,39 @@
+//## Typography
+@import "_variables";
+@import "_mixins";
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700|PT+Sans+Narrow:400,700");
+
+h1 {
+  font-size: $font-size-header;
+  font-family: $font-header;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: $spacing 0;
+
+  @include breakpoint(xs) {
+    font-size: 20px;
+    margin-bottom: $spacing-m;
+  }
+}
+
+p {
+  font-family: $font-base;
+  font-size: $font-size-base;
+}
+
+.text-bold {
+  font-weight: 600;
+  padding-left: ($spacing-m / 2);
+}
+
+.text-light {
+  color: $gray;
+  font-weight: 400;
+}
+
+.text-italic {
+  font-style: italic;
+  color: #cccccc;
+}
