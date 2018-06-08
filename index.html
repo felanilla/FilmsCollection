@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="PL-pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Filmweb
+    </title>
+    <meta name="description" content="Project title">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Project title" />
+    <meta property="og:title" content="Project title" />
+    <meta property="og:description" content="Project title" />
+    <link href="dist/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <section class="top-section container">
+            <div class="row">
+                <div class="col-1-1">
+                    <h1>
+                        moja kolekcja dvd/blue-ray
+                    </h1>
+                </div>
+            </div>
+            <div class="row row-sm-reverse">
+                <div class="col-1-3">
+                    <div class="sort-container">
+                        <div id="sort" class="sort">
+                            <div class="sort__title ">
+                                <p class="text-light ">
+                                    sortuj:
+                                </p>
+                                <p class="text-bold ">
+                                    alfabetycznie
+                                </p>
+                                <img class="sort__title__arrow " src="../img/arrow.svg ">
+                            </div>
+                        </div>
+                        <div class="sort__dropdown">
+                            <div class="col-1-2 u-padding-right-0 ">
+                                <p class="text-light ">
+                                    sortuj:
+                                </p>
+                                <p class="text-italic ">
+                                    (domyślnie)
+                                </p>
+                            </div>
+                            <div class="col-1-2 u-padding-left-0 ">
+                                <p data-dropdown-value="alphabet" class="sort-type">
+                                    alfabetycznie
+                                </p>
+                                <p data-dropdown-value="year" class="sort-type ">
+                                    wg roku produkcji
+                                </p>
+                                <p data-dropdown-value="id" class="sort-type ">
+                                    wg ID w bazie
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-3 u-visible-sm ">
+                    <div class="checkbox-container ">
+                        <div class="checkbox-container__checkbox ">
+                            <img class="checkbox-container__checkbox__img " src="../img/check.svg ">
+                        </div>
+                        <p class="checkbox-container__p u-text-bold ">
+                            ukryj nieobejrzane
+                        </p>
+                    </div>
+                </div>
+                <div class="col-1-3 ">
+                    <div class="search-container">
+                        <input type="search" placeholder="Wpisz szukany tytuł ">
+                        <img class="search__loupe " src="../img/loupe.svg ">
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-1-3 u-hidden-sm ">
+                    <div class="checkbox-container ">
+                        <div class="checkbox-container__checkbox ">
+                            <img class="checkbox-container__checkbox__img " src="../img/check.svg ">
+                        </div>
+                        <p class="checkbox-container__p u-text-bold ">
+                            ukryj nieobejrzane
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="content-section container">
+            <div class="row">
+                <div id="films" class="films"></div>
+            </div>
+        </section>
+
+        <script type="text/handlebars-template" id="films-template">
+    {{#each this}}
+      <div class="films__film col-1-6">
+        <img class="films__film__poster" alt="poster" src="{{poster.url}}">
+        <p class="films__film__title">{{title}}</p>
+      </div>
+    {{/each}}
+  </script>
+        <section class="add-film-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-1-1">
+                        <h1>
+                            dodaj tytuł
+                        </h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <form>
+                        <div class="col-1-3">
+                            <input type="text" id="title" name="title" placeholder="Tytuł filmu">
+                        </div>
+                        <div class="col-1-3">
+                            <input type="text" id="year" name="year" placeholder="Rok produkcji">
+                        </div>
+                        <div class="col-1-3">
+                            <input type="text" id="poster" name="poster" placeholder="Link do plakatu">
+                        </div>
+                        <div class="col-1-3">
+                            <div class="checkbox-container">
+                                <div class="checkbox-container__checkbox">
+                                    <img class="checkbox-container__checkbox__img" src="../img/check.svg">
+                                </div>
+                                <p class="checkbox-container__p u-text-bold">
+                                    widziałem ten film
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-2-3">
+                            <button type="submit">
+                                Wyślij
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <script src="dist/scripts/main.js"></script>
+</body>
+
+</html>
