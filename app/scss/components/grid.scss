@@ -71,7 +71,9 @@
   .col-2-3 {
     width: 100%;
   }
+}
 
+@include breakpoint(xs) {
   .col-1-6 {
     width: 50%;
   }
