@@ -20,21 +20,20 @@
 
       &__dropdown {
         display: none;
-        width: 100%;
+        position: absolute;
+        bottom: -109px;
+        left: -1px;
+        min-width: 296px;
+        margin: 0 auto;
         padding: $spacing-m 0;
         background: #fff;
         border: 1px solid #e8e8e8;
         border-top: none;
         z-index: 5;
         overflow: hidden;
-        transition: all 0.5s;
 
         &--active {
           display: block;
-
-          @include breakpoint(sm) {
-            margin-top: -20px;
-          }
         }
 
         p {
@@ -56,10 +55,6 @@
 
         p.text-italic {
           padding-left: 3px;
-        }
-
-        @include breakpoint(sm) {
-          margin-bottom: 20px;
         }
       }
     }
