@@ -79,7 +79,26 @@ var DATA = {
       ]
     };
 
+    function sortAlphabetically() {
+      function compareStrings(a, b) {
+        //case-insensitive comparison
+        a = a.toLowerCase();
+        b = b.toLowerCase();
+        return a < b ? -1 : a > b ? 1 : 0;
+      }
+      data.films.sort(function(a, b) {
+        return compareStrings(a.title, b.title);
+      });
+    }
+
+    function sortById() {
+      data.films.sort(function(a, b) {
+        return a.id - b.id;
+      });
+    }
+
     var films = data.films.map(function(filmInfo) {
+      sortAlphabetically();
       return $.extend({}, filmInfo, {
         poster: data.posters.find(function(p) {
           return p.id === filmInfo.posterId;

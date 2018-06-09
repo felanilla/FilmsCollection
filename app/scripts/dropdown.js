@@ -1,4 +1,4 @@
-var SORT = {
+var DROPDOWN = {
   openDropdown: () => {
     var sortEl = document.getElementById("sort");
     var sortDropdown = document.getElementsByClassName("sort__dropdown")[0];
@@ -30,10 +30,10 @@ var SORT = {
   },
 
   init: function() {
-    SORT.openDropdown();
+    DROPDOWN.openDropdown();
   }
 };
 
 module.exports = {
-  init: SORT.init
+  init: DROPDOWN.init
 };

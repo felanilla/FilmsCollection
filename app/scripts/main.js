@@ -2,8 +2,8 @@
 
 var data = require("./data");
 var ui = require("./ui");
-var sort = require("./sort");
+var dropdown = require("./dropdown");
 
 data.init();
 ui.init();
-sort.init();
+dropdown.init();
