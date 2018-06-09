@@ -1,12 +1,12 @@
 input[type="text"],
 input[type="search"],
 .sort {
-  position: relative;
   width: 100%;
   height: 50px;
   border: 1px solid #e8e8e8;
   padding: 0 $spacing-m;
   font-size: $font-size-base;
+  z-index: 1;
   cursor: pointer;
   @include flexbox;
   @include align-items(center);
@@ -19,21 +19,47 @@ input[type="search"],
     margin-top: auto;
     margin-bottom: auto;
   }
+}
+
+//Placeholder
+
+input::-webkit-input-placeholder {
+  font-size: $font-size-base;
+  transition: color 0.25s ease;
+}
+
+input:-moz-placeholder {
+  font-size: $font-size-base;
+}
+
+input::-moz-placeholder {
+  font-size: $font-size-base;
+}
+
+input:-ms-input-placeholder {
+  font-size: $font-size-base;
+}
+
+//Focused
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.input-line {
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: $primary;
+  z-index: 10;
+  margin-top: -2px;
+  transition: width 0.25s ease;
 
   @include breakpoint(sm) {
     margin-bottom: 20px;
   }
 }
 
-*::-webkit-input-placeholder {
-  font-size: $font-size-base;
-}
-*:-moz-placeholder {
-  font-size: $font-size-base;
-}
-*::-moz-placeholder {
-  font-size: $font-size-base;
-}
-*:-ms-input-placeholder {
-  font-size: $font-size-base;
+input:focus + .input-line {
+  width: 100%;
 }

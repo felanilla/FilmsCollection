@@ -12,11 +12,14 @@
 .u-text-center {
   text-align: center;
 }
-.u-text-light {
-  color: $gray;
-}
+
 .u-text-italic {
   font-style: italic;
+}
+
+.u-text-light {
+  color: $gray;
+  font-weight: 400;
 }
 
 //** Layering
@@ -28,13 +31,18 @@
 }
 
 //** Spacing
-
 .u-padding-right-0 {
   padding-right: 0;
 }
 
 .u-padding-left-0 {
   padding-left: 0;
+}
+
+//**Styles
+
+.u-box-shadow {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15);
 }
 
 //** Responsive classes
@@ -57,14 +65,23 @@
 
 // Basic animations
 
-.animate {
+.u-animate {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 
-.fade-in-left {
+.u-rotate {
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.u-fade-in-left {
   -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
 }
