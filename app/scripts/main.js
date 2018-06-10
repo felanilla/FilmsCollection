@@ -1,9 +1,9 @@
 //** Components
 
 var data = require("./data");
-var ui = require("./ui");
+var checkbox = require("./checkbox");
 var dropdown = require("./dropdown");
 
 data.init();
-ui.init();
+checkbox.init();
 dropdown.init();

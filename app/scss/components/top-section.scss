@@ -5,6 +5,13 @@
 .top-section {
   margin-top: $spacing;
 
+  h1 {
+    span {
+      font-weight: 400;
+      letter-spacing: normal;
+    }
+  }
+
   .sort-container {
     &--shadow {
       box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
@@ -16,6 +23,10 @@
       &__title {
         @include flexbox;
         @include align-items(center);
+
+        p#sort-current {
+          padding-left: ($spacing-m / 2);
+        }
 
         &__arrow {
           transition: all 0.3s ease-in-out;
@@ -73,7 +84,7 @@
         }
 
         p.text-italic {
-          padding-left: 3px;
+          padding-left: 4px;
         }
       }
 

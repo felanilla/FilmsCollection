@@ -1,8 +1,12 @@
 var utilities = require("./utilities");
 
 var DATA = {
-  loadTemplate: () => {
+  loadData: () => {
     var filmTemplate = Handlebars.compile($("#films-template").html());
+
+    function updateTemplate() {
+      $("#films").html(filmTemplate(films));
+    }
 
     var data = {
       films: [
@@ -41,21 +45,9 @@ var DATA = {
         },
         { id: 803161, posterId: 7830596, title: "Cargo (2017)" },
         { id: 804821, posterId: 7838017, title: "Book Club (2018)" },
-        {
-          id: 474646,
-          posterId: 7187428,
-          title: "After Shave (2005)"
-        },
-        {
-          id: 652224,
-          posterId: 7451127,
-          title: "Steel Panthers III (1997)"
-        },
-        {
-          id: 199948,
-          posterId: 7361288,
-          title: "Chronique d'un été (1961)"
-        }
+        { id: 474646, posterId: 7187428, title: "After Shave (2005)" },
+        { id: 652224, posterId: 7451127, title: "Steel Panthers III (1997)" },
+        { id: 199948, posterId: 7361288, title: "Chronique d'un été (1961)" }
       ],
       posters: [
         { id: 7039523, url: "http://1.fwcdn.pl/po/00/17/17/7581123.6.jpg" },
@@ -79,26 +71,7 @@ var DATA = {
       ]
     };
 
-    function sortAlphabetically() {
-      function compareStrings(a, b) {
-        //case-insensitive comparison
-        a = a.toLowerCase();
-        b = b.toLowerCase();
-        return a < b ? -1 : a > b ? 1 : 0;
-      }
-      data.films.sort(function(a, b) {
-        return compareStrings(a.title, b.title);
-      });
-    }
-
-    function sortById() {
-      data.films.sort(function(a, b) {
-        return a.id - b.id;
-      });
-    }
-
     var films = data.films.map(function(filmInfo) {
-      sortAlphabetically();
       return $.extend({}, filmInfo, {
         poster: data.posters.find(function(p) {
           return p.id === filmInfo.posterId;
@@ -106,11 +79,55 @@ var DATA = {
       });
     });
 
-    $("#films").html(filmTemplate(films));
+    films.sort(function(a, b) {
+      return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
+    });
+
+    updateTemplate();
+
+    document.getElementById("sort-title").addEventListener("click", function() {
+      films.sort(function(a, b) {
+        return a.title < b.title ? -1 : a.title > b.title ? 1 : 0;
+      });
+      updateTemplate();
+      DATA.changeFilmTitle();
+    });
+
+    // document.getElementById("sort-year").addEventListener("click", function() {
+    //   films.sort(function(a, b) {
+    //     a.title - b.title;
+    //   });
+    //   $("#films").html(filmTemplate(films));
+    //   DATA.changeFilmTitle();
+    // });
+
+    document.getElementById("sort-id").addEventListener("click", function() {
+      films.sort(function(a, b) {
+        return a.id - b.id;
+      });
+      updateTemplate();
+      DATA.changeFilmTitle();
+    });
+  },
+
+  changeFilmTitle: () => {
+    $(".films__film__title").each(function() {
+      $(this).html(
+        $(this)
+          .html()
+          .substr(0, $(this).html().length - 6) +
+          "<span class='text-light'>" +
+          $(this)
+            .html()
+            .substr(-6) +
+          "</span>"
+      );
+    });
   },
 
   init: function() {
-    DATA.loadTemplate();
+    DATA.loadData();
+    DATA.changeFilmTitle();
   }
 };
 

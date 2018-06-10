@@ -18,6 +18,50 @@
 
       &__poster {
         padding: 0 1px;
+
+        @include breakpoint(sm) {
+          min-width: 160px;
+        }
+      }
+
+      div {
+        position: relative;
+
+        .watch-checkbox {
+          position: absolute;
+          bottom: 5px;
+          right: 1px;
+          height: 32px;
+          width: 32px;
+          background-color: #cccccc;
+          z-index: 10;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+          @include flexbox;
+          @include align-items(center);
+          @include justify-content(center);
+
+          &__add {
+            height: 14px;
+          }
+
+          &__add.hide {
+            display: none;
+          }
+
+          &__checked {
+            height: 18px;
+            display: none;
+          }
+
+          &__checked.show {
+            display: block;
+          }
+        }
+
+        .watch-checkbox.watched {
+          background-color: $primary;
+        }
       }
 
       &__title {

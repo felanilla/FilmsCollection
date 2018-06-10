@@ -53,7 +53,7 @@ input:focus::-webkit-input-placeholder {
   background-color: $primary;
   z-index: 10;
   margin-top: -2px;
-  transition: width 0.25s ease;
+  transition: width 0.3s ease;
 
   @include breakpoint(sm) {
     margin-bottom: 20px;

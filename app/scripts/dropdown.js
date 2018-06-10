@@ -29,8 +29,15 @@ var DROPDOWN = {
     });
   },
 
+  showCurrentSortType: () => {
+    $(".sort-type").click(function(e) {
+      $("#sort-current").text($(this).text());
+    });
+  },
+
   init: function() {
     DROPDOWN.openDropdown();
+    DROPDOWN.showCurrentSortType();
   }
 };
 

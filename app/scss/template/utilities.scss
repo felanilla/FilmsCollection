@@ -72,15 +72,6 @@
   animation-fill-mode: both;
 }
 
-.u-rotate {
-  transition: all 0.2s ease-in-out;
-  -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
 .u-fade-in-left {
   -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
