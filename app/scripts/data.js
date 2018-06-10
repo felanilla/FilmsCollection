@@ -1,5 +1,3 @@
-var utilities = require("./utilities");
-
 var DATA = {
   loadData: () => {
     var filmTemplate = Handlebars.compile($("#films-template").html());
@@ -93,13 +91,13 @@ var DATA = {
       DATA.changeFilmTitle();
     });
 
-    // document.getElementById("sort-year").addEventListener("click", function() {
-    //   films.sort(function(a, b) {
-    //     a.title - b.title;
-    //   });
-    //   $("#films").html(filmTemplate(films));
-    //   DATA.changeFilmTitle();
-    // });
+    document.getElementById("sort-year").addEventListener("click", function() {
+      films.sort(function(a, b) {
+        return a.title.match(/\d+/) - b.title.match(/\d+/);
+      });
+      $("#films").html(filmTemplate(films));
+      DATA.changeFilmTitle();
+    });
 
     document.getElementById("sort-id").addEventListener("click", function() {
       films.sort(function(a, b) {
