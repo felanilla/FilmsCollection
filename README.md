@@ -1,6 +1,6 @@
 # Description
 
-Home DVD/Blue-Ray Collection 4 Filmweb
+Home DVD/Blue-Ray Collection
 
 # Setup
 

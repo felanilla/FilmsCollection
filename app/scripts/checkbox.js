@@ -1,9 +1,17 @@
 var CHECKBOX = {
   toggleCheckbox: () => {
-    $(".checkbox-container__checkbox").click(function() {
-      $(this).toggleClass("checked");
-    });
+    //using Vanilla
+    var checkbox = document.getElementsByClassName(
+      "checkbox-container__checkbox"
+    );
 
+    for (var i = 0; i < checkbox.length; i++) {
+      checkbox[i].addEventListener("click", function() {
+        this.classList.toggle("checked");
+      });
+    }
+
+    //using jQuery
     $(".watch-checkbox").click(function() {
       $(this).toggleClass("watched");
       $(this)
@@ -18,7 +26,7 @@ var CHECKBOX = {
   init: function() {
     CHECKBOX.toggleCheckbox();
 
-    $("#sort").click(function() {
+    document.getElementById("sort").addEventListener("click", function() {
       CHECKBOX.toggleCheckbox();
     });
   }
