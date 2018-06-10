@@ -23,6 +23,9 @@
                 <div class="col-1-1">
                     <h1>
                         moja kolekcja dvd/blue-ray
+                        <span class="films-amount">
+                            (22)
+                        </span>
                     </h1>
                 </div>
             </div>
@@ -34,13 +37,13 @@
                                 <p class="text-light ">
                                     sortuj:
                                 </p>
-                                <p class="text-bold ">
+                                <p id="sort-current">
                                     alfabetycznie
                                 </p>
                                 <img class="sort__title__arrow " src="dist/img/arrow.svg ">
                             </div>
                             <div class="sort__dropdown">
-                                <div class="col-1-2 u-padding-right-0 ">
+                                <div class="col-1-2">
                                     <p class="text-light ">
                                         sortuj:
                                     </p>
@@ -49,13 +52,13 @@
                                     </p>
                                 </div>
                                 <div class="col-1-2 u-padding-left-0 ">
-                                    <p data-dropdown-value="alphabet" class="sort-type">
+                                    <p id="sort-title" class="sort-type">
                                         alfabetycznie
                                     </p>
-                                    <p data-dropdown-value="year" class="sort-type ">
+                                    <p id="sort-year" class="sort-type ">
                                         wg roku produkcji
                                     </p>
-                                    <p data-dropdown-value="id" class="sort-type ">
+                                    <p id="sort-id" class="sort-type">
                                         wg ID w bazie
                                     </p>
                                 </div>
@@ -103,7 +106,13 @@
         <script type="text/handlebars-template" id="films-template">
     {{#each this}}
       <div class="films__film col-1-6">
-        <img class="films__film__poster" alt="poster" src="{{poster.url}}">
+        <div>
+           <img class="films__film__poster" alt="poster" src="{{poster.url}}">
+           <div class="watch-checkbox">
+              <img class="watch-checkbox-add" src="dist/img/add.svg ">
+              <img class="watch-checkbox-checked" src="dist/img/checked.svg ">
+           </div>
+        </div>
         <p class="films__film__title">{{title}}</p>
       </div>
     {{/each}}

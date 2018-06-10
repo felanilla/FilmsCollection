@@ -17,6 +17,10 @@ var CHECKBOX = {
 
   init: function() {
     CHECKBOX.toggleCheckbox();
+
+    $("#sort").click(function() {
+      CHECKBOX.toggleCheckbox();
+    });
   }
 };
 
