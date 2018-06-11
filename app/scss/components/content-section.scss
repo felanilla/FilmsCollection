@@ -18,10 +18,7 @@
 
       &__poster {
         padding: 0 1px;
-
-        @include breakpoint(sm) {
-          min-width: 160px;
-        }
+        display: block;
       }
 
       div {
@@ -29,8 +26,8 @@
 
         .watch-checkbox {
           position: absolute;
-          bottom: 5px;
-          right: 1px;
+          bottom: 0;
+          right: 0;
           height: 32px;
           width: 32px;
           background-color: #cccccc;
