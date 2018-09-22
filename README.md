@@ -1,6 +1,6 @@
 # Description
 
-Home DVD/Blue-Ray Collection based on Filmweb design
+Based on Filmweb design
 
 # Setup
 
